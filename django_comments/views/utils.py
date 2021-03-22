@@ -24,7 +24,7 @@ def next_redirect(request, fallback, **get_kwargs):
 
     Returns an ``HttpResponseRedirect``.
     """
-    next = request.POST.get('next') || request.GET.get('next')
+    next = request.POST.get('next') or request.GET.get('next')
     if not url_has_allowed_host_and_scheme(url=next, allowed_hosts={request.get_host()}):
         next = resolve_url(fallback)
 
