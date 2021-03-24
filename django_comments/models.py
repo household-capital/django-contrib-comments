@@ -12,6 +12,8 @@ class Comment(CommentAbstractModel):
     class Meta(CommentAbstractModel.Meta):
         db_table = "django_comments"
 
+    sf_id = models.CharField(max_length=20, null=True, blank=True)
+
 
 class CommentFlag(models.Model):
     """
